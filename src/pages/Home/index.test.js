@@ -30,22 +30,24 @@ describe("When Form is created", () => {
 
 describe("When a page is created", () => {
   it("a list of events is displayed", () => {
-    // to implement
+    const { queryByTestId } = render(<Home />);
+    expect(queryByTestId("events")).toBeTruthy();
   });
-  it("a list of people is displayed", async () => {
+  it("a list of people is displayed", () => {
     render(<Home />);
-    await screen.findByText("CEO");
-    await screen.findByText("Directeur marketing");
-    await screen.findByText("CXO");
-    await screen.findByText("Animateur");
-    await screen.findByText("VP animation");
-    await screen.findByText("VP communication");
+    expect(screen.getByText("CEO")).toBeInTheDocument();
+    expect(screen.getByText("Directeur marketing")).toBeInTheDocument();
+    expect(screen.getByText("CXO")).toBeInTheDocument();
+    expect(screen.getByText("Animateur")).toBeInTheDocument();
+    expect(screen.getByText("VP animation")).toBeInTheDocument();
+    expect(screen.getByText("VP communication")).toBeInTheDocument();
   });
   it("a footer is displayed", () => {
     const { queryByTestId } = render(<Home />);
     expect(queryByTestId(/footer/i)).toBeTruthy();
   });
   it("an event card, with the last event, is displayed", () => {
-    // to implement
+    render(<Home />);
+    expect(screen.getByText("Notre dernière prestation")).toBeInTheDocument();
   });
 });
