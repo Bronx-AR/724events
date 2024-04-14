@@ -32,11 +32,18 @@ describe("When a page is created", () => {
   it("a list of events is displayed", () => {
     // to implement
   });
-  it("a list a people is displayed", () => {
-    // to implement
+  it("a list of people is displayed", async () => {
+    render(<Home />);
+    await screen.findByText("CEO");
+    await screen.findByText("Directeur marketing");
+    await screen.findByText("CXO");
+    await screen.findByText("Animateur");
+    await screen.findByText("VP animation");
+    await screen.findByText("VP communication");
   });
   it("a footer is displayed", () => {
-    // to implement
+    const { queryByTestId } = render(<Home />);
+    expect(queryByTestId(/footer/i)).toBeTruthy();
   });
   it("an event card, with the last event, is displayed", () => {
     // to implement
