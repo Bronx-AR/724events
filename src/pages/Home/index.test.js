@@ -42,10 +42,12 @@ describe("When a page is created", () => {
     expect(screen.getByText("VP animation")).toBeInTheDocument();
     expect(screen.getByText("VP communication")).toBeInTheDocument();
   });
+  /* Test pour vérifier la liste des personnes est correctement affichés dans le composant 'Home' */
   it("a footer is displayed", () => {
     const { queryByTestId } = render(<Home />);
     expect(queryByTestId(/footer/i)).toBeTruthy();
   });
+  /* Test pour vérifier si le pied de page est correctement affichés dans le composant 'Home' */
   it("an event card, with the last event, is displayed", () => {
     render(<Home />);
     expect(screen.getByText("Notre dernière prestation")).toBeInTheDocument();

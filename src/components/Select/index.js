@@ -16,9 +16,11 @@ const Select = ({
   const [value, setValue] = useState();
   const [collapsed, setCollapsed] = useState(true);
   const changeValue = (newValue) => {
+    /* appelle de la fonction 'onChange' avec une nouvelle valeur */
     onChange(newValue);
     setValue(newValue);
     setCollapsed(!collapsed);
+    /* utilisation de ! pour inverser la valuer de 'collapsed' si 'true' deviendra 'false' */
   };
   return (
     <div className={`SelectContainer ${type}`} data-testid="select-testid">

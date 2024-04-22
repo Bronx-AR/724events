@@ -14,3 +14,4 @@ export const MONTHS = {
 };
 
 export const getMonth = (date) => MONTHS[date.getMonth() + 1];
+/* Ajout de '+1' pour changer le comportement pour renvoyer le nom du mois suivant au lieu du mois actuel */

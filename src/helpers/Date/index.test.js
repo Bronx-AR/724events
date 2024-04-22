@@ -13,3 +13,4 @@ describe("Date helper", () => {
     });
   });
 });
+/* Les tests ont été implémentés. Ils vérifient si la fonction 'getMonths' retourne le bon mois pour les dates données */
